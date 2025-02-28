@@ -17,9 +17,9 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #5ba39d; /* je les fait pour que Fond blue cars plus jollie */
+            background-color: #5ba39d;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            color: #ffffff; /* Texte en blanc */
+            color: #ffffff;
         }
 
         label {
@@ -92,102 +92,214 @@
         button:hover {
             background-color: #204060;
         }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #306090;
+            color: #ffffff;
+        }
+
+        .table-container {
+            overflow-x: auto;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Formulaire de commande</h1>
-        </header>
-        
-        <form action="#" method="post">
-            <div class="form-row">
-                <div>
-                    <label for="nom">Nom :</label>
-                    <input type="text" id="nom" name="nom" required placeholder="Entrez votre nom">
+    <main>
+        <div class="container">
+            <header>
+                <h1>Formulaire de commande</h1>
+            </header>
+            
+            <form id="commandeForm">
+                <div class="form-row">
+                    <div>
+                        <label for="nom">Nom :</label>
+                        <input type="text" id="nom" name="nom" required placeholder="Entrez votre nom">
+                    </div>
+                    <div>
+                        <label for="prenom">Prénom :</label>
+                        <input type="text" id="prenom" name="prenom" required placeholder="Entrez votre prénom">
+                    </div>
+                    <div>
+                        <label for="adresse">Adresse :</label>
+                        <input type="text" id="adresse" name="adresse" required placeholder="Entrez votre adresse">
+                    </div>
                 </div>
-                <div>
-                    <label for="prenom">Prénom :</label>
-                    <input type="text" id="prenom" name="prenom" required placeholder="Entrez votre prénom">
+
+                <div class="form-group">
+                    <label for="telephone">Téléphone :</label>
+                    <input type="tel" id="telephone" name="telephone" required placeholder="Entrez votre numéro de téléphone">
                 </div>
-                <div>
-                    <label for="adresse">Adresse :</label>
-                    <input type="text" id="adresse" name="adresse" required placeholder="Entrez votre adresse">
+
+                <div class="form-group">
+                    <label for="email">Adresse Email :</label>
+                    <input type="email" id="email" name="email" required placeholder="Entrez votre email">
                 </div>
-            </div>
 
-            <div class="form-group">
-                <label for="telephone">Téléphone :</label>
-                <input type="tel" id="telephone" name="telephone" required placeholder="Entrez votre numéro de téléphone">
-            </div>
-
-            <div class="form-group">
-                <label for="email">Adresse Email :</label>
-                <input type="email" id="email" name="email" required placeholder="Entrez votre email">
-            </div>
-
-            <div class="form-group">
-                <label for="password">Mot de passe :</label>
-                <input type="password" id="password" name="password" required placeholder="Entrez votre mot de passe">
-            </div>
-
-            <div class="form-group">
-                <label for="livraison">Mode de livraison :</label>
-                <select id="livraison" name="livraison">
-                    <option value="domicile">Livraison à domicile</option>
-                    <option value="retrait">Retrait sur place</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label><b>Mode de paiement :</b></label>
-                <div class="inline-group">
-                    <input type="radio" id="paiement_sur_place" name="paiement" value="sur_place">
-                    <label for="paiement_sur_place">Paiement sur place</label>
-                    <input type="radio" id="paiement_en_ligne" name="paiement" value="en_ligne">
-                    <label for="paiement_en_ligne">Paiement en ligne</label>
+                <div class="form-group">
+                    <label for="password">Mot de passe :</label>
+                    <input type="password" id="password" name="password" required placeholder="Entrez votre mot de passe">
                 </div>
-            </div>
 
-            <div class="form-group">
-                <label for="facture"><b>Je souhaite recevoir une facture :</b></label>
-                <input type="checkbox" id="facture" name="facture" value="oui">
-            </div>
-
-            <div class="menu-row">
-                <div>
-                    <label for="entree">Entrée :</label>
-                    <select id="entree" name="entree">
-                        <option value="soupe">Soupe à l'oignon</option>
-                        <option value="salade">Salade grecque</option>
+                <div class="form-group">
+                    <label for="livraison">Mode de livraison :</label>
+                    <select id="livraison" name="livraison">
+                        <option value="domicile">Livraison à domicile</option>
+                        <option value="retrait">Retrait sur place</option>
                     </select>
                 </div>
-                <div>
-                    <label for="plat">Plat :</label>
-                    <select id="plat" name="plat">
-                        <option value="coq">Coq au vin</option>
-                        <option value="lasagne">Lasagnes</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="dessert">Dessert :</label>
-                    <select id="dessert" name="dessert">
-                        <option value="tiramisu">Tiramisu</option>
-                        <option value="creme">Crème brûlée</option>
-                    </select>
-                </div>
-            </div>
 
-            <br><br>
-            <button type="submit">Ajouter</button>
-            <button type="reset">Annuler</button>
-        </form>
-    </div>
+                <div class="form-group">
+                    <label><b>Mode de paiement :</b></label>
+                    <div class="inline-group">
+                        <input type="radio" id="paiement_sur_place" name="paiement" value="sur_place">
+                        <label for="paiement_sur_place">Paiement sur place</label>
+                        <input type="radio" id="paiement_en_ligne" name="paiement" value="en_ligne">
+                        <label for="paiement_en_ligne">Paiement en ligne</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="facture"><b>Je souhaite recevoir une facture :</b></label>
+                    <input type="checkbox" id="facture" name="facture" value="oui">
+                </div>
+
+                <div class="menu-row">
+                    <div>
+                        <label for="entree">Entrée :</label>
+                        <select id="entree" name="entree">
+                            <option value="soupe">Soupe à l'oignon</option>
+                            <option value="salade">Salade grecque</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="plat">Plat :</label>
+                        <select id="plat" name="plat">
+                            <option value="coq">Coq au vin</option>
+                            <option value="lasagne">Lasagnes</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="dessert">Dessert :</label>
+                        <select id="dessert" name="dessert">
+                            <option value="tiramisu">Tiramisu</option>
+                            <option value="creme">Crème brûlée</option>
+                        </select>
+                    </div>
+                </div>
+
+                <br><br>
+                <button type="button" onclick="ajouter()">Ajouter</button>
+                <button type="button" onclick="supprimer()">Supprimer</button>
+                <button type="reset">Annuler</button>
+            </form>
+
+            <div class="table-container">
+                <table id="commandesTable">
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                           
+                            <th>Adresse de livrason</th>
+                            
+                           
+                            <th>Mode de Livraison</th>
+                            <th>Entrée</th>
+                            <th>Plat</th>
+                            <th>Dessert</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Les lignes seront ajoutées ici dynamiquement -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Fonction pour ajouter une commande au tableau
+        function ajouter() {
+            const form = document.forms["commandeForm"];
+            const nom = form.nom.value;
+            
+            const adresse = form.adresse.value;
+           
+            const livraison = form.livraison.value;
+            const entree = form.entree.value;
+            const plat = form.plat.value;
+            const dessert = form.dessert.value;
+            // Vérification que tous les champs sont remplis
+            if (!nom || !adresse || !livraison || !entree || !plat || !dessert) {
+                alert("Veuillez remplir tous les champs du formulaire.");
+                return;
+            }
+
+            // Création d'une nouvelle ligne
+            const tr = document.createElement("tr");
+
+            // Création des cellules
+            const tdNom = document.createElement("td");
+            tdNom.textContent = nom;
+
+            const tdAdresse = document.createElement("td");
+            tdAdresse.textContent = adresse;
+
+
+            const tdLivraison = document.createElement("td");
+            tdLivraison.textContent = livraison;
+
+            const tdEntree = document.createElement("td");
+            tdEntree.textContent = entree;
+
+            const tdPlat = document.createElement("td");
+            tdPlat.textContent = plat;
+
+            const tdDessert = document.createElement("td");
+            tdDessert.textContent = dessert;
+            // Ajout des cellules à la ligne
+            tr.appendChild(tdNom);
+            
+            tr.appendChild(tdAdresse);
+            
+            tr.appendChild(tdLivraison);
+
+            tr.appendChild(tdEntree);
+
+            tr.appendChild(tdPlat);
+
+            tr.appendChild(tdDessert);
+
+            // Ajout de la ligne au tableau
+            const tbody = document.querySelector("#commandesTable tbody");
+            tbody.appendChild(tr);
+
+            // Affichage dans la console pour vérification
+            console.log("Nouvelle commande ajoutée :", { nom, adresse, livraison, entree, plat, dessert });
+        }
+
+        // Fonction pour supprimer toutes les lignes du tableau
+        function supprimer() {
+            const tbody = document.querySelector("#commandesTable tbody");
+            while (tbody.firstChild) {
+                tbody.removeChild(tbody.firstChild);
+            }
+            console.log("Toutes les commandes ont été supprimées.");
+        }
+    </script>
 </body>
 <footer>
-    ca cest pour repondre aux question demander: 
-    hvbuvbvdvdbavbdvnadbv
-   changement
-    
 </footer>
 </html>
