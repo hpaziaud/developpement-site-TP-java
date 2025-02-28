@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passer une commande</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #5ba39d; /* je les fait pour que Fond blue cars plus jollie */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: #ffffff; /* Texte en blanc */
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input, select {
+            margin-bottom: 15px;
+            display: block;
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            font-family: 'Roboto', sans-serif;
+            outline: none;
+        }
+
+        input:focus, select:focus {
+            border-bottom: 2px solid #306090;
+        }
+
+        input:invalid, select:invalid {
+            border-bottom: 2px solid #ff0000;
+            caret-color: #ff0000;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .form-row input {
+            flex: 1;
+        }
+
+        .menu-row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .menu-row select {
+            flex: 1;
+        }
+
+        .inline-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .inline-group label {
+            font-weight: normal;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #306090;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        button:hover {
+            background-color: #204060;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Formulaire de commande</h1>
+        </header>
+        
+        <form action="#" method="post">
+            <div class="form-row">
+                <div>
+                    <label for="nom">Nom :</label>
+                    <input type="text" id="nom" name="nom" required placeholder="Entrez votre nom">
+                </div>
+                <div>
+                    <label for="prenom">Prénom :</label>
+                    <input type="text" id="prenom" name="prenom" required placeholder="Entrez votre prénom">
+                </div>
+                <div>
+                    <label for="adresse">Adresse :</label>
+                    <input type="text" id="adresse" name="adresse" required placeholder="Entrez votre adresse">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="telephone">Téléphone :</label>
+                <input type="tel" id="telephone" name="telephone" required placeholder="Entrez votre numéro de téléphone">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Adresse Email :</label>
+                <input type="email" id="email" name="email" required placeholder="Entrez votre email">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Mot de passe :</label>
+                <input type="password" id="password" name="password" required placeholder="Entrez votre mot de passe">
+            </div>
+
+            <div class="form-group">
+                <label for="livraison">Mode de livraison :</label>
+                <select id="livraison" name="livraison">
+                    <option value="domicile">Livraison à domicile</option>
+                    <option value="retrait">Retrait sur place</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label><b>Mode de paiement :</b></label>
+                <div class="inline-group">
+                    <input type="radio" id="paiement_sur_place" name="paiement" value="sur_place">
+                    <label for="paiement_sur_place">Paiement sur place</label>
+                    <input type="radio" id="paiement_en_ligne" name="paiement" value="en_ligne">
+                    <label for="paiement_en_ligne">Paiement en ligne</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="facture"><b>Je souhaite recevoir une facture :</b></label>
+                <input type="checkbox" id="facture" name="facture" value="oui">
+            </div>
+
+            <div class="menu-row">
+                <div>
+                    <label for="entree">Entrée :</label>
+                    <select id="entree" name="entree">
+                        <option value="soupe">Soupe à l'oignon</option>
+                        <option value="salade">Salade grecque</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="plat">Plat :</label>
+                    <select id="plat" name="plat">
+                        <option value="coq">Coq au vin</option>
+                        <option value="lasagne">Lasagnes</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="dessert">Dessert :</label>
+                    <select id="dessert" name="dessert">
+                        <option value="tiramisu">Tiramisu</option>
+                        <option value="creme">Crème brûlée</option>
+                    </select>
+                </div>
+            </div>
+
+            <br><br>
+            <button type="submit">Ajouter</button>
+            <button type="reset">Annuler</button>
+        </form>
+    </div>
+</body>
+<footer>
+    ca cest pour repondre aux question demander: 
+    hvbuvbvdvdbavbdvnadbv
+   
+    
+</footer>
+</html>

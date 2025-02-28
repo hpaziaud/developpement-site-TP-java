@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #306090; 
+    color: #ffffff; 
+    font-family: "Trebuchet MS"; 
+    margin: 1em 1%; 
+    padding: 10px;
+    border: 3px solid black; 
+}
+
+#page {
+    color: #000000;
+    background-color: #ffffff;
+    background-position: top right;
+    background-repeat: no-repeat;
+    border: 3px solid #000000;
+    min-height: 20em;
+    height: 55em;
+}
+
+header h1 {
+    font-family: "Arial"; 
+    text-align: center; 
+    border: 2px solid #fff; 
+    background-color: #ff9900; 
+    padding: 10px; 
+    border-radius: 10px; 
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); 
+    margin-top: 20px; 
+}
+
+header h1 img {
+    border-radius: 50%; 
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); 
+}
+
+nav {
+    width: 80%; 
+    margin: 0 auto; 
+    padding: 15px; 
+    border-radius: 10px; 
+    border: 2px solid #fff;
+    text-align: center;
+}
+
+nav h1 {
+    text-align: center; 
+    border: 2px solid #fff; 
+    background-color: #ff9900;
+    padding: 10px;
+    border-radius: 5px; 
+}
+
+nav h2 {
+    border: 2px solid #fff; 
+    background-color: #ffcc00; 
+    padding: 8px;
+    border-radius: 5px; 
+}
+
+
+.container {
+    display: flex;
+    justify-content: space-around; 
+    align-items: center;
+    margin-top: 15px;
+}
+
+
+.container h2 {
+    border: 2px solid #fff; 
+    background-color: #ffcc00; 
+    padding: 8px;
+    border-radius: 5px; 
+    cursor: pointer; 
+}
+
+
+.container h2:hover {
+    background-color: #ff6600;
+}
+
+
+.container ol {
+    display: none;
+}
+
+
+.container:hover ol {
+    display: block;
+}
+
+footer {
+    position: fixed; 
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    border-top: 3px solid #ff9900;
+    cursor: pointer;
+}
+
+p {
+    transition: color 0.5s ease-in-out, font-family 0.5s ease-in-out;
+}
+
+p:hover {
+    color: #ffcc00;
+    font-family: "Courier New", monospace;
+}
